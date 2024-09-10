@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de contraseñas</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+<h1>Generador de contraseñas</h1> 
+</head>
+<body>
+    <!--Form se usa para delimitar el formulario-->
+  <form>
+    <label for="nombre">¿Cuál es tu nombre?</label>
+    <input type="text" id="nombre" name="nombre" required pattern="[A-ZÁÉÍÓÚÑ ]{3,120}">    
+  <p>
+  <!--Fieldset se usa para agrupar objetos o controles del formulario-->
+    <fieldset>
+      <legend>¿Quieres incluir caracteres especiales en tu contraseña?<abbr title="Este campo es obligatorio" aria-label="required">*</abbr></legend>
+      <!--input = control de formulario -->
+      <!--radio = botón de opción -->
+      <!--required = obligatorio -->
+      <input type="radio" required name="licencia" id="r1" value="yes"><label for="r1">Sí</label>
+      <input type="radio" required name="licencia" id="r2" value="no"><label for="r2">No</label>
+    </fieldset>
+  </p>
+  <p>
+    <label for="n1">¿Qué edad tienes?</label>
+    <!-- El atributo pattern puede actuar como una alternativa para los navegadores que
+         no implementan el tipo de entrada de número, pero admiten el atributo pattern.
+         Ten en cuenta que los navegadores que admiten el atributo pattern lo harán
+         fallar silenciosamente cuando se use con un campo numérico.
+         Su uso aquí solo actúa como una alternativa -->
+     <!--number solo recibe números -->
+         <input type="number" min="12" max="120" step="1" id="n1" name="edad"
+           pattern="\d+">
+  </p>
+  <p>
+    <label for="t1">Escoje un numero del 10 al 20<abbr title="Este campo es obligatorio" aria-label="required">*</abbr></label>
+     <!--text recibe texto -->
+     <!--list es un parámetro para enlazar una lista. -->
+    <input type="text" id="t1" name="numeros" list="l1" required
+           pattern="[Pp]látano|[Cc]ereza|[Mm]anzana|[Ff]resa|[Ll]imón|[Nn]aranja ">
+    <!--datalist permite crear un cuadro combinado
+      para seleccionar un elemento de una lista -->
+    <datalist id="l1">
+      <option>10</option>
+      <option>11</option>
+      <option>12</option>
+      <option>13</option>
+      <option>14</option>
+      <option>15</option>
+      <option>16</option>
+      <option>17</option>
+      <option>18</option>
+      <option>19</option>
+      <option>20</option>
+     </datalist>
+  </p>
+  <p>
+    <label for="t2">¿Cuál es tu dirección de correo electrónico? </label>
+    <!--email valida si tiene @ y dominio -->
+    <input type="email" id="t2" name="email">
+  </p>
+  <label for="fecha1">¿Cuándo naciste?</label>
+  <input type="date">
+  <p>
+    <!--button o input type="submit" es un botón -->
+    <input type="submit"></button>
+  </p>
+  <button class="btn success">Generar contraseña</button>
+</form>
+   
+</body>
+</html>
